@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:www.cryptoninja-partners.xyz)",
+      "Bash(mkdir:*)",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:twitter.com)"
+    ],
+    "deny": []
+  }
+}
