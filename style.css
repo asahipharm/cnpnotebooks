@@ -700,8 +700,38 @@ section {
 /* ===== Medical Section ===== */
 .for-medical {
     background: linear-gradient(135deg, 
-        rgba(102, 187, 106, 0.05) 0%, 
-        rgba(77, 208, 225, 0.05) 100%);
+        rgba(102, 187, 106, 0.15) 0%, 
+        rgba(77, 208, 225, 0.15) 100%);
+    border-top: 2px solid rgba(102, 187, 106, 0.3);
+    border-bottom: 2px solid rgba(77, 208, 225, 0.3);
+    box-shadow: 
+        inset 0 2px 0 rgba(255, 255, 255, 0.2),
+        inset 0 -2px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.for-medical::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(1px 1px at 20% 30%, rgba(102, 187, 106, 0.4), transparent),
+        radial-gradient(2px 2px at 80% 70%, rgba(77, 208, 225, 0.3), transparent),
+        radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.5), transparent);
+    background-size: 250px 250px, 300px 300px, 200px 200px;
+    animation: twinkle 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.for-medical .container {
+    position: relative;
+    z-index: 2;
 }
 
 .medical-content {
@@ -721,6 +751,24 @@ section {
     color: var(--dark-gray);
     margin-bottom: 40px;
     letter-spacing: 0.03em;
+    position: relative;
+}
+
+.benefits-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(102, 187, 106, 0.6) 20%, 
+        rgba(79, 195, 247, 0.8) 50%, 
+        rgba(77, 208, 225, 0.6) 80%, 
+        transparent 100%);
+    border-radius: 1px;
 }
 
 .benefits-grid {
@@ -783,6 +831,24 @@ section {
     color: var(--dark-gray);
     margin-bottom: 40px;
     letter-spacing: 0.03em;
+    position: relative;
+}
+
+.process-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(77, 208, 225, 0.6) 20%, 
+        rgba(79, 195, 247, 0.8) 50%, 
+        rgba(102, 187, 106, 0.6) 80%, 
+        transparent 100%);
+    border-radius: 1px;
 }
 
 .process-steps {
@@ -953,7 +1019,8 @@ section {
 }
 
 .partner-address,
-.partner-phone {
+.partner-phone,
+.partner-distribution {
     display: flex;
     align-items: flex-start;
     gap: 8px;
@@ -964,7 +1031,8 @@ section {
 }
 
 .partner-address i,
-.partner-phone i {
+.partner-phone i,
+.partner-distribution i {
     color: var(--primary-blue);
     margin-top: 2px;
     flex-shrink: 0;
@@ -1248,6 +1316,7 @@ section {
     letter-spacing: 0.02em;
     text-decoration: none;
     transition: all var(--transition-fast);
+    cursor: pointer;
 }
 
 .hashtag:hover {
@@ -1700,8 +1769,23 @@ section {
         max-width: 280px;
     }
     
+    .hero-image {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
     .features-grid-compact {
         gap: 20px;
+    }
+    
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .plan-card {
+        margin: 0 auto;
+        max-width: 100%;
     }
     
     .feature-card-compact {
@@ -1790,6 +1874,24 @@ section {
     
     .section-title {
         font-size: 1.8rem;
+    }
+    
+    .hero-image {
+        max-width: 280px;
+        margin: 0 auto;
+        border-width: 2px;
+    }
+    
+    .distribution-plans {
+        margin: 30px 0;
+    }
+    
+    .plan-header {
+        padding: 20px;
+    }
+    
+    .plan-content {
+        padding: 20px 15px;
     }
     
     .character-image {
