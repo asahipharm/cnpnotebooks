@@ -623,9 +623,19 @@ section {
     margin: 0 auto 12px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--primary-blue);
+    background: linear-gradient(135deg, 
+        rgba(79, 195, 247, 0.4) 0%, 
+        rgba(129, 199, 132, 0.3) 25%, 
+        rgba(173, 216, 230, 0.4) 50%, 
+        rgba(77, 208, 225, 0.3) 75%, 
+        rgba(144, 238, 144, 0.4) 100%);
+    padding: 3px;
     position: relative;
     z-index: 2;
+}
+
+.character-image .character-img {
+    border-radius: 50%;
 }
 
 .character-img {
