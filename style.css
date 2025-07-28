@@ -1805,7 +1805,22 @@ section {
     }
     
     .characters-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .character-image {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+    }
+    
+    .character-name {
+        font-size: 0.9rem;
+    }
+    
+    .character-card {
+        padding: 15px 8px;
     }
     
     .benefits-grid {
@@ -1895,8 +1910,23 @@ section {
     }
     
     .character-image {
-        width: 150px;
-        height: 150px;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 8px;
+    }
+    
+    .character-name {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .characters-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+    
+    .character-card {
+        padding: 12px;
     }
     
     .btn {
