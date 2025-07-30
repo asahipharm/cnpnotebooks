@@ -528,6 +528,28 @@ section {
     transform: scale(1.05);
 }
 
+.feature-icon-compact {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-size: 3rem;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-light);
+}
+
+.feature-card-compact:hover .feature-icon-compact {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-medium);
+}
+
 .feature-content-compact {
     flex: 1;
     position: relative;
@@ -2005,6 +2027,12 @@ section {
     .feature-image-compact {
         width: 100px;
         height: 100px;
+    }
+    
+    .feature-icon-compact {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
     }
     
     .characters-grid {

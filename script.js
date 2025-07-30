@@ -1,4 +1,19 @@
 // CNPおくすり手帳 公式サイト - JavaScript
+
+// 配布プランへのスクロール関数
+function scrollToPlans() {
+    event.preventDefault();
+    const target = document.getElementById('distribution-plans');
+    if (target) {
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    }
+    return false;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     
     // ===== スムーススクロール =====
