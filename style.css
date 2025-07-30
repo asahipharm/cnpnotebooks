@@ -1054,17 +1054,7 @@ section {
     flex-shrink: 0;
 }
 
-.partner-phone a {
-    color: var(--primary-blue);
-    text-decoration: none;
-    font-weight: var(--font-weight-medium);
-    transition: color var(--transition-fast);
-}
-
-.partner-phone a:hover {
-    color: var(--primary-green);
-    text-decoration: underline;
-}
+/* Phone number styling removed - displaying as plain text */
 
 /* 配布についての注意事項 */
 .distribution-notice {
@@ -1799,6 +1789,19 @@ section {
     letter-spacing: 0.02em;
 }
 
+/* モバイル・デスクトップ表示制御 */
+.mobile-break {
+    display: none;
+}
+
+.desktop-nobreak {
+    display: inline;
+}
+
+.mobile-only {
+    display: none;
+}
+
 .credit-link {
     display: inline-flex;
     align-items: center;
@@ -2078,12 +2081,24 @@ section {
     }
     
     .credits-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
     
     .credit-card {
-        padding: 25px;
+        padding: 20px;
+    }
+    
+    .mobile-break {
+        display: inline;
+    }
+    
+    .desktop-nobreak {
+        display: none;
+    }
+    
+    .mobile-only {
+        display: inline;
     }
 }
 
@@ -2138,18 +2153,33 @@ section {
         padding: 12px;
     }
     
+    .credits-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
     .credit-card {
-        padding: 20px;
+        padding: 15px;
     }
     
     .credit-avatar {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 15px;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 12px;
     }
     
     .credit-name {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+    
+    .credit-role {
+        font-size: 0.8rem;
+    }
+    
+    .credit-link {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        gap: 6px;
     }
     
     .social-feedback {
