@@ -1223,7 +1223,11 @@ section {
     
     /* スマホ用サンプル画像サイズ調整 */
     .sample-cover-img,
-    .sample-profile-img,
+    .sample-profile-img {
+        max-width: 95%;
+        max-height: 400px;
+    }
+    
     .sample-medicine-img,
     .sample-emergency-img {
         max-width: 95%;
