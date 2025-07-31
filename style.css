@@ -314,21 +314,26 @@ p {
 }
 
 .brand-text {
-    background: linear-gradient(135deg, 
-        #E3F2FD 0%,
-        #BBDEFB 30%,
-        #90CAF9 60%,
-        #64B5F6 100%);
+    font-weight: 700;
+    font-size: 1.05em;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(180deg, 
+        #A5D6A7 0%,
+        #66BB6A 25%,
+        #4CAF50 50%,
+        #388E3C 75%,
+        #2E7D32 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-weight: 500;
-    font-size: 1.05em;
     text-shadow: 
-        0 1px 2px rgba(0, 0, 0, 0.1),
-        0 2px 4px rgba(79, 195, 247, 0.3);
-    position: relative;
-    display: inline-block;
+        0 1px 0 rgba(165, 214, 167, 0.8),
+        0 2px 3px rgba(56, 142, 60, 0.6),
+        0 0 10px rgba(102, 187, 106, 0.4);
+    filter: drop-shadow(0 2px 0 rgba(46, 125, 50, 0.3))
+            drop-shadow(0 3px 6px rgba(56, 142, 60, 0.2));
+    letter-spacing: 0.02em;
 }
 
 .hero-buttons {

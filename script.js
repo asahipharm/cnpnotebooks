@@ -2,15 +2,22 @@
 
 // 配布プランへのスクロール関数
 function scrollToPlans() {
-    event.preventDefault();
-    const target = document.getElementById('distribution-plans');
-    if (target) {
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    }
+    if (event) event.preventDefault();
+    
+    // 少し遅延を入れて確実に要素を取得
+    setTimeout(() => {
+        const target = document.querySelector('.distribution-plans');
+        if (target) {
+            const rect = target.getBoundingClientRect();
+            const targetPosition = window.pageYOffset + rect.top;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }, 100);
+    
     return false;
 }
 
