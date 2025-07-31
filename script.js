@@ -348,6 +348,24 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('ダークモードが検出されました');
     }
 
+    // ===== サンプルページタブ機能 =====
+    const sampleBtns = document.querySelectorAll('.sample-btn');
+    const samplePages = document.querySelectorAll('.sample-page');
+    
+    sampleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const targetPage = this.getAttribute('data-page');
+            
+            // すべてのボタンとページを非アクティブにする
+            sampleBtns.forEach(b => b.classList.remove('active'));
+            samplePages.forEach(p => p.classList.remove('active'));
+            
+            // クリックされたボタンと対応するページをアクティブにする
+            this.classList.add('active');
+            document.getElementById(`sample-${targetPage}`).classList.add('active');
+        });
+    });
+
     // ===== 初期化完了ログ =====
     console.log('🌟 CNPおくすり手帳 公式サイトが正常に読み込まれました！');
     console.log('💊 健康な毎日を、CNPと一緒に！');
