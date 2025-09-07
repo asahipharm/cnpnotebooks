@@ -418,3 +418,124 @@ window.addEventListener('resize', function() {
 window.addEventListener('beforeunload', function() {
     console.log('CNPおくすり手帳サイトをご利用いただき、ありがとうございました！');
 });
+
+// ===== 感想カルーセル機能 =====
+let currentSlide = 0;
+let totalSlides = 0;
+let slidesPerView = 1;
+
+function initCarousel() {
+    const container = document.querySelector('.testimonials-container');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    
+    if (!container || !slides.length) return;
+    
+    totalSlides = slides.length;
+    updateSlidesPerView();
+    updateCarousel();
+    
+    // 自動再生機能
+    let autoSlideInterval = setInterval(() => {
+        moveCarousel(1);
+    }, 5000); // 5秒ごとに次のスライドへ
+    
+    // マウスオーバー時は自動再生を停止
+    const carousel = document.querySelector('.testimonials-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(() => {
+                moveCarousel(1);
+            }, 5000);
+        });
+    }
+    
+    // タッチスワイプ対応
+    let startX = 0;
+    let isDragging = false;
+    
+    container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    }, { passive: true });
+    
+    container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    }, { passive: false });
+    
+    container.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        
+        if (Math.abs(diffX) > 50) { // 50px以上のスワイプで反応
+            if (diffX > 0) {
+                moveCarousel(1); // 左スワイプ：次へ
+            } else {
+                moveCarousel(-1); // 右スワイプ：前へ
+            }
+        }
+    }, { passive: true });
+    
+    // 画面サイズ変更時の対応
+    window.addEventListener('resize', debounce(() => {
+        updateSlidesPerView();
+        updateCarousel();
+    }, 250));
+}
+
+function updateSlidesPerView() {
+    const width = window.innerWidth;
+    if (width >= 1024) {
+        slidesPerView = 3;
+    } else if (width >= 768) {
+        slidesPerView = 2;
+    } else {
+        slidesPerView = 1;
+    }
+}
+
+function moveCarousel(direction) {
+    const maxSlide = Math.max(0, totalSlides - slidesPerView);
+    
+    currentSlide += direction;
+    
+    if (currentSlide > maxSlide) {
+        currentSlide = 0; // 最後まで行ったら最初に戻る
+    } else if (currentSlide < 0) {
+        currentSlide = maxSlide; // 最初より前に行ったら最後に移動
+    }
+    
+    updateCarousel();
+}
+
+function updateCarousel() {
+    const container = document.querySelector('.testimonials-container');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    
+    if (!container) return;
+    
+    const slideWidth = 100 / slidesPerView;
+    const translateX = -currentSlide * slideWidth;
+    
+    container.style.transform = `translateX(${translateX}%)`;
+    
+    // ボタンの状態更新（無限ループなので常に有効）
+    if (prevBtn) prevBtn.disabled = false;
+    if (nextBtn) nextBtn.disabled = false;
+}
+
+// DOMContentLoaded時にカルーセルを初期化
+document.addEventListener('DOMContentLoaded', function() {
+    // 少し遅延を入れて確実に要素が読み込まれてから初期化
+    setTimeout(initCarousel, 100);
+});

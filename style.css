@@ -2653,3 +2653,385 @@ section {
 .mt-4 {
     margin-top: 32px;
 }
+
+/* ===== Testimonials Carousel ===== */
+.testimonials-carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius-large);
+    background: linear-gradient(135deg, 
+        rgba(79, 195, 247, 0.05) 0%, 
+        rgba(102, 187, 106, 0.05) 100%);
+    box-shadow: var(--shadow-light);
+    padding: 20px;
+    margin: 40px 0;
+}
+
+.testimonials-container {
+    display: flex;
+    transition: transform var(--transition-medium);
+    gap: 24px;
+}
+
+.testimonial-slide {
+    flex: 0 0 100%;
+    padding: 0 12px;
+}
+
+@media (min-width: 768px) {
+    .testimonial-slide {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonial-slide {
+        flex: 0 0 33.333%;
+    }
+}
+
+.testimonial-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 32px 24px;
+    box-shadow: var(--shadow-light);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid rgba(79, 195, 247, 0.1);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: rgba(79, 195, 247, 0.3);
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.testimonial-text {
+    font-family: var(--font-family-body);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--dark-gray);
+    margin-bottom: 24px;
+    position: relative;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+.testimonial-text::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -8px;
+    font-size: 3rem;
+    color: var(--primary-blue);
+    font-family: serif;
+    opacity: 0.3;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+}
+
+.author-info {
+    flex: 1;
+}
+
+.author-name {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-medium);
+    color: var(--dark-gray);
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+}
+
+.author-role {
+    font-family: var(--font-family-body);
+    color: var(--gray);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.carousel-btn {
+    background: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-light);
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+}
+
+.carousel-btn:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-medium);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.carousel-btn:disabled:hover {
+    background: var(--white);
+    color: var(--primary-blue);
+    transform: none;
+}
+
+.feedback-cta {
+    text-align: center;
+    background: linear-gradient(135deg, 
+        rgba(255, 241, 118, 0.08) 0%, 
+        rgba(244, 143, 177, 0.08) 100%);
+    border-radius: var(--border-radius);
+    padding: 32px 24px;
+    margin-top: 40px;
+    border: 2px solid rgba(244, 143, 177, 0.1);
+}
+
+.feedback-cta .feedback-title {
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 16px;
+    font-weight: var(--font-weight-medium);
+}
+
+.feedback-cta .feedback-description {
+    font-family: var(--font-family-body);
+    color: var(--gray);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.feedback-cta .contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 0;
+    font-family: var(--font-family-body);
+}
+
+.feedback-cta .contact-info a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+}
+
+.feedback-cta .contact-info a:hover {
+    color: var(--primary-green);
+    text-decoration: underline;
+}
+
+/* ===== Twitter Post Style ===== */
+.twitter-post {
+    border: 2px solid rgba(29, 155, 240, 0.2);
+    background: var(--white);
+    transition: all var(--transition-fast);
+}
+
+.twitter-post:hover {
+    border-color: rgba(29, 155, 240, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(29, 155, 240, 0.15);
+}
+
+.twitter-post::before {
+    background: linear-gradient(90deg, #1D9BF0, #1DA1F2);
+}
+
+.twitter-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.twitter-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1D9BF0, #1DA1F2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+.twitter-user-info {
+    flex: 1;
+}
+
+.twitter-name {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-bold);
+    color: var(--black);
+    margin: 0 0 2px 0;
+    font-size: 1rem;
+}
+
+.twitter-handle {
+    font-family: var(--font-family-body);
+    color: #536471;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.twitter-logo {
+    color: #1D9BF0;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.twitter-content {
+    padding-top: 8px;
+}
+
+.twitter-text {
+    font-family: var(--font-family-body);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 16px;
+    padding-left: 0;
+    font-style: normal;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.twitter-text::before {
+    display: none;
+}
+
+.twitter-engagement {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.engagement-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #536471;
+    font-size: 0.85rem;
+    font-family: var(--font-family-body);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    padding: 4px 8px;
+    border-radius: 12px;
+    transition: all var(--transition-fast);
+}
+
+.engagement-item:hover {
+    color: #1D9BF0;
+    background: rgba(29, 155, 240, 0.1);
+}
+
+.engagement-item i {
+    font-size: 16px;
+}
+
+.twitter-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1D9BF0;
+    text-decoration: none;
+    font-family: var(--font-family-body);
+    font-size: 0.9rem;
+    font-weight: var(--font-weight-medium);
+    padding: 6px 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(29, 155, 240, 0.3);
+    transition: all var(--transition-fast);
+    background: rgba(29, 155, 240, 0.05);
+}
+
+.twitter-link:hover {
+    background: rgba(29, 155, 240, 0.1);
+    border-color: rgba(29, 155, 240, 0.5);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.twitter-link i {
+    font-size: 12px;
+}
+
+/* ===== X公式埋め込み対応 ===== */
+.twitter-embed {
+    padding: 16px;
+    border: none;
+    box-shadow: var(--shadow-light);
+    background: transparent;
+}
+
+.twitter-embed::before {
+    display: none;
+}
+
+.twitter-embed .twitter-tweet {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+}
+
+/* 埋め込みツイートのテーマ調整 */
+.twitter-embed iframe {
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-light) !important;
+}

@@ -484,52 +484,84 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">CNPおくすり手帳の感想をお待ちしております</h2>
+                <h2 class="section-title">CNPおくすり手帳をご利用いただいた皆様の声</h2>
                 <p class="section-description">
-                    CNPおくすり手帳をご利用いただいた皆様の声をお聞かせください。<br>
-                    患者様、ご家族様、医療関係者の皆様からの感想やご意見をお待ちしています。
+                    CNPおくすり手帳をご利用いただいた患者様、ご家族様、医療関係者の皆様からの
+                    温かいお声をご紹介します。
                 </p>
             </div>
             
-            <div class="feedback-request">
-                <div class="feedback-card">
-                    <div class="feedback-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="feedback-content">
-                        <h3 class="feedback-title">ご感想・ご意見をお聞かせください</h3>
-                        <p class="feedback-description">
-                            CNPおくすり手帳の使い心地はいかがですか？<br>
-                            キャラクターデザインについてのご感想や、実際のご利用シーンでのご体験など、
-                            皆様からの貴重なお声をお待ちしております。公式HPでご紹介させていただくことがございます。
-                        </p>
-                        <div class="feedback-contact">
-                            <p class="contact-info">
-                                <i class="fab fa-x-twitter"></i>
-                                <a href="https://twitter.com/messages/compose?recipient_id=asahikimama" target="_blank" rel="noopener noreferrer">@asahikimamaのDM</a>または各医療機関にてお気軽にお声かけください。
-                            </p>
-                        </div>
-                        
-                        <div class="social-feedback">
-                            <div class="social-header">
-                                <div class="social-icon">
-                                    <i class="fab fa-x-twitter"></i>
+            <div class="testimonials-carousel">
+                <div class="testimonials-container">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "CNPキャラクターが可愛くて、子どもがお薬手帳を持参するのを嫌がらなくなりました。
+                                    服薬管理がとても楽になっています。"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">患者様のご家族</h4>
+                                        <p class="author-role">お子様の保護者</p>
+                                    </div>
                                 </div>
-                                <h4 class="social-title">SNSでもご感想をお聞かせください</h4>
-                            </div>
-                            <p class="social-description">
-                                X（旧Twitter）で <strong>#CNPお薬手帳</strong> をつけて、ご感想やご利用シーンをぜひシェアしてください！<br>
-                                皆様の投稿を楽しみにお待ちしております。
-                            </p>
-                            <div class="hashtag-display">
-                                <a href="https://twitter.com/intent/tweet?hashtags=CNPお薬手帳" 
-                                   class="hashtag hashtag-link" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer">
-                                    #CNPお薬手帳
-                                </a>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- X公式埋め込みポスト -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card twitter-embed">
+                            <blockquote class="twitter-tweet" data-theme="light" data-width="100%">
+                                <a href="https://x.com/tufurinkazan/status/1964155386757615819">
+                                    Loading tweet...
+                                </a>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "防災ページがとても参考になりました。
+                                    災害時のお薬の備えについて改めて考える機会になりました。"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">利用者様</h4>
+                                        <p class="author-role">患者様</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" onclick="moveCarousel(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="feedback-request">
+                <div class="feedback-cta">
+                    <h3 class="feedback-title">あなたの声もお聞かせください</h3>
+                    <p class="feedback-description">
+                        X（旧Twitter）で <strong>#CNPお薬手帳</strong> をつけて、ご感想をシェアしてください！
+                    </p>
+                    <div class="feedback-contact">
+                        <p class="contact-info">
+                            <i class="fab fa-x-twitter"></i>
+                            <a href="https://twitter.com/messages/compose?recipient_id=asahikimama" target="_blank" rel="noopener noreferrer">@asahikimamaのDM</a>
+                            または
+                            <a href="https://twitter.com/intent/tweet?hashtags=CNPお薬手帳" target="_blank" rel="noopener noreferrer" class="hashtag-link">#CNPお薬手帳</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -699,5 +731,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <!-- X (Twitter) ウィジェット -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
