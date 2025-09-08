@@ -2745,7 +2745,75 @@ section {
     margin-top: 32px;
 }
 
-/* ===== Testimonials Carousel ===== */
+/* ===== Testimonials Timeline ===== */
+.testimonials-timeline {
+    margin: 40px 0;
+}
+
+.timeline-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-blue) var(--light-gray);
+    padding: 20px 0;
+}
+
+.timeline-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 4px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+    background: var(--primary-blue);
+    border-radius: 4px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-green);
+}
+
+.tweet-card-wrapper {
+    display: inline-block;
+    width: 350px;
+    margin: 0 16px;
+    vertical-align: top;
+    white-space: normal;
+}
+
+.timeline-scroll-hint {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--gray);
+    font-family: var(--font-family-body);
+    font-size: 0.9rem;
+}
+
+.timeline-scroll-hint i {
+    color: var(--primary-blue);
+    margin-right: 8px;
+    animation: bounce-horizontal 2s infinite;
+}
+
+@keyframes bounce-horizontal {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(5px);
+    }
+}
+
+/* 旧カルーセル用スタイル（削除予定） */
 .testimonials-carousel {
     position: relative;
     max-width: 100%;
@@ -2757,6 +2825,7 @@ section {
     box-shadow: var(--shadow-light);
     padding: 20px;
     margin: 40px 0;
+    display: none; /* 非表示にする */
 }
 
 .testimonials-container {
@@ -3105,26 +3174,60 @@ section {
 }
 
 /* ===== X公式埋め込み対応 ===== */
+.twitter-embed-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8px;
+    background: transparent;
+}
+
+.twitter-embed-wrapper .twitter-tweet {
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-light) !important;
+}
+
+.twitter-embed-wrapper iframe {
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow-light) !important;
+    width: 100% !important;
+    max-width: 350px !important;
+}
+
+/* 読み込み中の表示調整 */
+.twitter-embed-wrapper blockquote {
+    background: var(--white);
+    border: 2px solid rgba(29, 155, 240, 0.1);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    font-family: var(--font-family-body);
+    color: var(--gray);
+}
+
+.twitter-embed-wrapper blockquote a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+}
+
+.twitter-embed-wrapper blockquote a:hover {
+    text-decoration: underline;
+}
+
+/* 旧スタイル（削除予定） */
 .twitter-embed {
     padding: 16px;
     border: none;
     box-shadow: var(--shadow-light);
     background: transparent;
-}
-
-.twitter-embed::before {
-    display: none;
-}
-
-.twitter-embed .twitter-tweet {
-    margin: 0 auto !important;
-    max-width: 100% !important;
-}
-
-/* 埋め込みツイートのテーマ調整 */
-.twitter-embed iframe {
-    border-radius: var(--border-radius) !important;
-    box-shadow: var(--shadow-light) !important;
+    display: none; /* 非表示 */
 }
 
 /* ===== Twitter画像表示 ===== */
@@ -3229,14 +3332,36 @@ section {
         font-size: 1.8rem;
     }
     
-    /* カルーセルの調整 */
-    .testimonials-carousel {
-        padding: 16px 12px;
+    /* タイムラインの調整 */
+    .testimonials-timeline {
         margin: 20px 0;
+    }
+    
+    .timeline-container {
+        padding: 16px 0;
+    }
+    
+    .tweet-card-wrapper {
+        width: 280px;
+        margin: 0 12px;
     }
     
     .testimonial-card {
         padding: 20px 16px;
+    }
+    
+    .timeline-scroll-hint {
+        font-size: 0.8rem;
+        margin-top: 16px;
+    }
+    
+    /* 埋め込みツイートのスマホ対応 */
+    .twitter-embed-wrapper {
+        padding: 4px;
+    }
+    
+    .twitter-embed-wrapper iframe {
+        max-width: 280px !important;
     }
     
     /* Twitter風表示の調整 */

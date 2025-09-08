@@ -496,9 +496,9 @@
                 </p>
             </div>
             
-            <div class="testimonials-carousel">
-                <div class="testimonials-container">
-                    <div class="testimonial-slide">
+            <div class="testimonials-timeline">
+                <div class="timeline-container">
+                    <div class="tweet-card-wrapper">
                         <div class="testimonial-card">
                             <div class="testimonial-content">
                                 <p class="testimonial-text">
@@ -515,39 +515,18 @@
                         </div>
                     </div>
                     
-                    <!-- X公式埋め込みポスト（代替表示） -->
-                    <div class="testimonial-slide">
-                        <div class="testimonial-card twitter-post">
-                            <div class="twitter-header">
-                                <div class="twitter-avatar">
-                                    <div class="avatar-placeholder">
-                                        <i class="fab fa-x-twitter"></i>
-                                    </div>
-                                </div>
-                                <div class="twitter-user-info">
-                                    <h4 class="twitter-name">@tufurinkazan</h4>
-                                    <p class="twitter-handle">X (Twitter)より</p>
-                                </div>
-                                <div class="twitter-logo">
-                                    <i class="fab fa-x-twitter"></i>
-                                </div>
-                            </div>
-                            <div class="twitter-content">
-                                <div class="twitter-image">
-                                    <img src="images/tu-hu-san.jpeg" alt="CNPおくすり手帳の感想" loading="lazy">
-                                </div>
-                                <a href="https://x.com/tufurinkazan/status/1964155386757615819" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer" 
-                                   class="twitter-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    元の投稿を見る
+                    <!-- X公式埋め込みポスト -->
+                    <div class="tweet-card-wrapper">
+                        <div class="twitter-embed-wrapper">
+                            <blockquote class="twitter-tweet" data-theme="light" data-width="100%" data-dnt="true">
+                                <a href="https://x.com/tufurinkazan/status/1964155386757615819">
+                                    Loading tweet...
                                 </a>
-                            </div>
+                            </blockquote>
                         </div>
                     </div>
                     
-                    <div class="testimonial-slide">
+                    <div class="tweet-card-wrapper">
                         <div class="testimonial-card">
                             <div class="testimonial-content">
                                 <p class="testimonial-text">
@@ -563,15 +542,27 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="tweet-card-wrapper">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "フルカラーで見やすく、デザインも素敵です。
+                                    患者様との会話のきっかけにもなって助かっています。"
+                                </p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4 class="author-name">薬局スタッフ様</h4>
+                                        <p class="author-role">調剤薬局</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev" onclick="moveCarousel(-1)">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn next" onclick="moveCarousel(1)">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                <div class="timeline-scroll-hint">
+                    <p><i class="fas fa-arrow-right"></i> 横にスクロールして他の感想もご覧ください</p>
                 </div>
             </div>
             
