@@ -518,10 +518,9 @@
                     <!-- X公式埋め込みポスト -->
                     <div class="tweet-card-wrapper">
                         <div class="twitter-embed-wrapper">
-                            <blockquote class="twitter-tweet" data-theme="light" data-width="100%" data-dnt="true">
-                                <a href="https://x.com/tufurinkazan/status/1964155386757615819">
-                                    Loading tweet...
-                                </a>
+                            <blockquote class="twitter-tweet" data-lang="ja" data-theme="light" data-width="350" data-dnt="true">
+                                <p lang="ja" dir="ltr">CNPおくすり手帳についてのご感想をいただきました。詳細は元の投稿をご確認ください。</p>
+                                <a href="https://twitter.com/tufurinkazan/status/1964155386757615819?ref_src=twsrc%5Etfw">元の投稿を見る</a>
                             </blockquote>
                         </div>
                     </div>
@@ -747,8 +746,31 @@
         </div>
     </footer>
 
+    <!-- JavaScriptファイル -->
     <script src="script.js"></script>
-    <!-- X (Twitter) ウィジェット -->
+    
+    <!-- X (Twitter) ウィジェット - 必ず最後に読み込む -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    <!-- Twitterウィジェット初期化スクリプト -->
+    <script>
+        // ウィジェットが読み込まれた後に実行
+        window.addEventListener('load', function() {
+            if (typeof twttr !== 'undefined') {
+                twttr.widgets.load();
+            }
+        });
+        
+        // ウィジェットスクリプトの読み込み完了を待つ
+        function loadTwitterWidgets() {
+            if (typeof twttr !== 'undefined') {
+                twttr.widgets.load();
+            } else {
+                setTimeout(loadTwitterWidgets, 100);
+            }
+        }
+        
+        setTimeout(loadTwitterWidgets, 1000);
+    </script>
 </body>
 </html>
