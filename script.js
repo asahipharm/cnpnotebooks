@@ -535,100 +535,13 @@ function updateCarousel() {
 }
 
 // ===== テスティモニアルスクロール管理 =====
-let currentTestimonialIndex = 0;
-const totalTestimonials = 3;
-let autoScrollInterval;
-
-function scrollTestimonials(direction) {
-    const container = document.getElementById('testimonials-scroll');
-    if (!container) return;
-    
-    const cardWidth = 382; // カード幅 + マージン (350px + 32px)
-    
-    // 現在のインデックスを更新
-    currentTestimonialIndex += direction;
-    
-    // ループ処理
-    if (currentTestimonialIndex >= totalTestimonials) {
-        currentTestimonialIndex = 0;
-    } else if (currentTestimonialIndex < 0) {
-        currentTestimonialIndex = totalTestimonials - 1;
-    }
-    
-    // スクロール実行
-    const targetScroll = currentTestimonialIndex * cardWidth;
-    container.scrollTo({
-        left: targetScroll,
-        behavior: 'smooth'
-    });
-    
-    // インジケーター更新
-    updateTestimonialIndicator();
-    
-    // 自動スクロールをリセット
-    resetAutoScroll();
-}
-
-function updateTestimonialIndicator() {
-    const currentSlideElement = document.querySelector('.current-slide');
-    if (currentSlideElement) {
-        currentSlideElement.textContent = currentTestimonialIndex + 1;
-    }
-}
-
-function startAutoScroll() {
-    autoScrollInterval = setInterval(() => {
-        scrollTestimonials(1);
-    }, 5000); // 5秒ごとに次へ
-}
-
-function stopAutoScroll() {
-    clearInterval(autoScrollInterval);
-}
-
-function resetAutoScroll() {
-    stopAutoScroll();
-    startAutoScroll();
-}
-
 function initTestimonialScroll() {
     const container = document.getElementById('testimonials-scroll');
-    const timelineControls = document.querySelector('.timeline-controls');
     
     if (!container) return;
     
-    // 自動スクロール開始
-    startAutoScroll();
-    
-    // マウスオーバー時は自動スクロール停止
-    if (timelineControls) {
-        timelineControls.addEventListener('mouseenter', stopAutoScroll);
-        timelineControls.addEventListener('mouseleave', startAutoScroll);
-    }
-    
-    container.addEventListener('mouseenter', stopAutoScroll);
-    container.addEventListener('mouseleave', startAutoScroll);
-    
-    // タッチ操作時も自動スクロール停止
-    container.addEventListener('touchstart', stopAutoScroll);
-    container.addEventListener('touchend', () => {
-        setTimeout(startAutoScroll, 3000); // タッチ終了後3秒で再開
-    });
-    
-    // 手動スクロール時のインジケーター更新
-    container.addEventListener('scroll', () => {
-        const cardWidth = 382;
-        const scrollLeft = container.scrollLeft;
-        const newIndex = Math.round(scrollLeft / cardWidth);
-        
-        if (newIndex !== currentTestimonialIndex && newIndex < totalTestimonials) {
-            currentTestimonialIndex = newIndex;
-            updateTestimonialIndicator();
-        }
-    });
-    
-    // 初期インジケーター設定
-    updateTestimonialIndicator();
+    // 単純に横スクロール可能なコンテナとして機能
+    console.log('Testimonial scroll container initialized');
 }
 
 // DOMContentLoaded時に初期化

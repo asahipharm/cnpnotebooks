@@ -2751,12 +2751,7 @@ section {
 }
 
 .timeline-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 24px;
-    padding: 0 20px;
+    display: none;
 }
 
 .timeline-btn {
@@ -2819,7 +2814,9 @@ section {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: var(--primary-blue) var(--light-gray);
-    padding: 20px 0;
+    padding: 20px 20px;
+    display: flex;
+    gap: 16px;
 }
 
 .timeline-container::-webkit-scrollbar {
@@ -2841,10 +2838,7 @@ section {
 }
 
 .tweet-card-wrapper {
-    display: inline-block;
-    width: 350px;
-    margin: 0 16px;
-    vertical-align: top;
+    flex: 0 0 350px;
     white-space: normal;
 }
 
@@ -3403,8 +3397,12 @@ section {
     }
     
     .tweet-card-wrapper {
-        width: 280px;
-        margin: 0 12px;
+        flex: 0 0 280px;
+    }
+    
+    .timeline-container {
+        padding: 16px 20px;
+        gap: 12px;
     }
     
     .testimonial-card {
