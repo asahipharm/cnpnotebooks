@@ -497,25 +497,21 @@
             </div>
             
             <div class="testimonials-timeline">
-                <div class="timeline-container">
-                    <div class="tweet-card-wrapper">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">
-                                    "CNPキャラクターが可愛くて、子どもがお薬手帳を持参するのを嫌がらなくなりました。
-                                    服薬管理がとても楽になっています。"
-                                </p>
-                                <div class="testimonial-author">
-                                    <div class="author-info">
-                                        <h4 class="author-name">患者様のご家族</h4>
-                                        <p class="author-role">お子様の保護者</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- スクロールボタン -->
+                <div class="timeline-controls">
+                    <button class="timeline-btn timeline-prev" onclick="scrollTestimonials(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="timeline-indicator">
+                        <span class="current-slide">1</span> / <span class="total-slides">3</span>
                     </div>
-                    
-                    <!-- X公式埋め込みポスト -->
+                    <button class="timeline-btn timeline-next" onclick="scrollTestimonials(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="timeline-container" id="testimonials-scroll">
+                    <!-- オリジナルのツイート -->
                     <div class="tweet-card-wrapper">
                         <div class="twitter-embed-wrapper">
                             <blockquote class="twitter-tweet" data-lang="ja" data-theme="light" data-width="350" data-dnt="true">
@@ -525,7 +521,6 @@
                         </div>
                     </div>
                     
-                    <!-- 2つ目のX公式埋め込みポスト -->
                     <div class="tweet-card-wrapper">
                         <div class="twitter-embed-wrapper">
                             <blockquote class="twitter-tweet" data-lang="ja" data-theme="light" data-width="350" data-dnt="true">
@@ -536,48 +531,47 @@
                     </div>
                     
                     <div class="tweet-card-wrapper">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">
-                                    "防災ページがとても参考になりました。
-                                    災害時のお薬の備えについて改めて考える機会になりました。"
-                                </p>
-                                <div class="testimonial-author">
-                                    <div class="author-info">
-                                        <h4 class="author-name">利用者様</h4>
-                                        <p class="author-role">患者様</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="twitter-embed-wrapper">
+                            <blockquote class="twitter-tweet" data-lang="ja" data-theme="light" data-width="350" data-dnt="true">
+                                <p lang="ja" dir="ltr">CNPおくすり手帳についての3つ目のご感想をいただきました。詳細は元の投稿をご確認ください。</p>
+                                <a href="https://twitter.com/P1n9_3r/status/1965627090268815751?ref_src=twsrc%5Etfw">元の投稿を見る</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                    
+                    <!-- 無限ループ用の重複ツイート -->
+                    <div class="tweet-card-wrapper">
+                        <div class="twitter-embed-wrapper">
+                            <blockquote class="twitter-tweet" data-lang="ja" data-theme="light" data-width="350" data-dnt="true">
+                                <p lang="ja" dir="ltr">CNPおくすり手帳についてのご感想をいただきました。詳細は元の投稿をご確認ください。</p>
+                                <a href="https://twitter.com/tufurinkazan/status/1964155386757615819?ref_src=twsrc%5Etfw">元の投稿を見る</a>
+                            </blockquote>
                         </div>
                     </div>
                     
                     <div class="tweet-card-wrapper">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p class="testimonial-text">
-                                    "フルカラーで見やすく、デザインも素敵です。
-                                    患者様との会話のきっかけにもなって助かっています。"
-                                </p>
-                                <div class="testimonial-author">
-                                    <div class="author-info">
-                                        <h4 class="author-name">薬局スタッフ様</h4>
-                                        <p class="author-role">調剤薬局</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="twitter-embed-wrapper">
+                            <blockquote class="twitter-tweet" data-lang="ja" data-theme="light" data-width="350" data-dnt="true">
+                                <p lang="ja" dir="ltr">CNPおくすり手帳についての2つ目のご感想をいただきました。詳細は元の投稿をご確認ください。</p>
+                                <a href="https://twitter.com/move2earn2heal/status/1965020206365130863?ref_src=twsrc%5Etfw">元の投稿を見る</a>
+                            </blockquote>
                         </div>
                     </div>
-                </div>
-                
-                <div class="timeline-scroll-hint">
-                    <p><i class="fas fa-arrow-right"></i> 横にスクロールして他の感想もご覧ください</p>
+                    
+                    <div class="tweet-card-wrapper">
+                        <div class="twitter-embed-wrapper">
+                            <blockquote class="twitter-tweet" data-lang="ja" data-theme="light" data-width="350" data-dnt="true">
+                                <p lang="ja" dir="ltr">CNPおくすり手帳についての3つ目のご感想をいただきました。詳細は元の投稿をご確認ください。</p>
+                                <a href="https://twitter.com/P1n9_3r/status/1965627090268815751?ref_src=twsrc%5Etfw">元の投稿を見る</a>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="feedback-request">
                 <div class="feedback-cta">
-                    <h3 class="feedback-title">あなたの声もお聞かせください</h3>
+                    <h3 class="feedback-title">あなたの声も<span class="mobile-break"><br></span><span class="desktop-nobreak">お聞かせください</span></h3>
                     <p class="feedback-description">
                         X（旧Twitter）で <strong>#CNPお薬手帳</strong> をつけて、ご感想をシェアしてください！
                     </p>
@@ -681,7 +675,7 @@
     <section id="credits" class="credits">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">CNPおくすり手帳制作チーム</h2>
+                <h2 class="section-title">CNPおくすり<span class="mobile-break">手帳<br></span><span class="desktop-nobreak">手帳</span>制作チーム</h2>
             </div>
             
             <div class="credits-grid">
