@@ -2088,6 +2088,19 @@ section {
     letter-spacing: 0.02em;
 }
 
+.news-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 1rem;
+    margin-left: 8px;
+    transition: color var(--transition-fast);
+}
+
+.news-link:hover {
+    color: var(--secondary-green);
+    text-decoration: underline;
+}
+
 .news-description {
     font-family: var(--font-family-body);
     color: var(--gray);
