@@ -2041,6 +2041,97 @@ section {
     letter-spacing: 0.01em;
 }
 
+/* ===== Sukoyaka Ninja Section ===== */
+.sukoyaka-ninja {
+    background: linear-gradient(135deg, 
+        rgba(79, 195, 247, 0.05) 0%, 
+        rgba(255, 241, 118, 0.05) 100%);
+    padding: var(--section-padding) 0;
+}
+
+.sukoyaka-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sukoyaka-header {
+    margin-bottom: 32px;
+}
+
+.sukoyaka-title {
+    font-size: 2rem;
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-gray);
+    margin-bottom: 16px;
+}
+
+.sukoyaka-description {
+    font-size: 1.1rem;
+    font-family: var(--font-family-body);
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+.sukoyaka-action {
+    display: flex;
+    justify-content: center;
+}
+
+.sukoyaka-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-green) 100%);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius-large);
+    font-size: 1.1rem;
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-medium);
+    box-shadow: 0 4px 20px rgba(79, 195, 247, 0.3);
+    transition: all var(--transition-medium);
+    transform: translateY(0);
+}
+
+.sukoyaka-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(79, 195, 247, 0.4);
+    text-decoration: none;
+    color: var(--white);
+}
+
+.sukoyaka-btn:active {
+    transform: translateY(-1px);
+}
+
+.sukoyaka-btn i:first-child {
+    font-size: 1.2rem;
+}
+
+.sukoyaka-btn i:last-child {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .sukoyaka-title {
+        font-size: 1.6rem;
+    }
+    
+    .sukoyaka-description {
+        font-size: 1rem;
+    }
+    
+    .sukoyaka-btn {
+        padding: 16px 24px;
+        font-size: 1rem;
+        gap: 10px;
+    }
+}
+
 /* ===== News Section ===== */
 .news {
     background: var(--white);
